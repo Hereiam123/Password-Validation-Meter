@@ -15,6 +15,27 @@
     margin: 4rem auto 1rem;
   }
 
+  .field:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 4px;
+    width: 100%;
+    background: purple;
+    transform: scaleX(0);
+    transform-origin: 0%;
+    transition: transform 500ms ease;
+    top: 2px;
+  }
+
+  .field:focus-within {
+    border-color: transparent;
+  }
+
+  .field:focus-within::after {
+    transform: scaleX(1);
+  }
+
   .label {
     color: var(--text-color);
     font-size: 1.2rem;
@@ -37,7 +58,7 @@
     color: yellow;
   }
 
-  input:invalid {
+  .input:invalid {
     color: red;
   }
 </style>
