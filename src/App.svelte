@@ -39,6 +39,16 @@
   .label {
     color: var(--text-color);
     font-size: 1.2rem;
+    z-index: -1;
+    position: absolute;
+    transform: translateY(-2rem);
+    transform-origin: 0%;
+    transition: transform 400ms;
+  }
+
+  .field:focus-within .label,
+  .input:not(:placeholder-shown) + .label {
+    transform: scale(0.8) translateY(-5rem);
   }
 
   .input {
@@ -66,11 +76,11 @@
 <main>
   <form>
     <div class="field">
-      <input type="email" name="email" placeholder="" class="input" />
+      <input type="email" name="email" placeholder=" " class="input" />
       <label for="email" class="label">Email</label>
     </div>
     <div class="field">
-      <input type="password" name="password" placeholder="" class="input" />
+      <input type="password" name="password" placeholder=" " class="input" />
       <label for="password" class="label">Password</label>
     </div>
   </form>
